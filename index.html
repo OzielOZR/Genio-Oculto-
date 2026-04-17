@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Gênio Oculto - Desbloqueie Seu Potencial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #0f0f0f;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .countdown-bar {
+            background-color: #dc2626;
+            padding: 12px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-dark {
+            background-color: #1f2937;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .hero {
+            text-align: center;
+        }
+
+        .hero p:first-of-type {
+            font-size: 22px;
+            color: #d1d5db;
+            margin-bottom: 30px;
+        }
+
+        .hero p:nth-of-type(2) {
+            font-size: 18px;
+            color: #9ca3af;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #fbbf24;
+            color: #1f2937;
+            padding: 18px 48px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(251, 191, 36, 0.4);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background-color: #1f2937;
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid #374151;
+        }
+
+        .card-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #d1d5db;
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .hero-gradient {
+            background-image: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+        }
+
+        .video-container {
+            max-width: 700px;
+            margin: 0 auto;
+            aspect-ratio: 16/9;
+            background-color: #111;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid #374151;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
+        .highlight-box {
+            background-color: #7c3aed;
+            padding: 32px;
+            border-radius: 8px;
+            border-left: 4px solid #fbbf24;
+            margin-bottom: 40px;
+        }
+
+        .highlight-box p {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
+        .pillars {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .pillar {
+            background-color: #374151;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .pillar-number {
+            width: 48px;
+            height: 48px;
+            background-color: #fbbf24;
+            color: #1f2937;
+            font-size: 24px;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .pillar p {
+            font-size: 14px;
+            color: #d1d5db;
+            margin-bottom: 0;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background-color: #111;
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid #374151;
+        }
+
+        .feature-emoji {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .testimonial {
+            background-color: #f5f5f5;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .testimonial-name {
+            font-size: 12px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 12px;
+        }
+
+        .testimonial-message {
+            background-color: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #1f2937;
+            line-height: 1.5;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 8px;
+        }
+
+        .testimonial-reply {
+            background-color: #fbbf24;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #1f2937;
+            text-align: right;
+            font-weight: 500;
+            border: 1px solid #f59e0b;
+        }
+
+        .pricing-section {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pricing-box {
+            background-color: #111;
+            padding: 40px;
+            border-radius: 12px;
+            border: 2px solid #fbbf24;
+            margin-bottom: 30px;
+        }
+
+        .price-comparison {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .old-price {
+            font-size: 32px;
+            text-decoration: line-through;
+            color: #6b7280;
+        }
+
+        .discount-badge {
+            font-size: 12px;
+            background-color: #dc2626;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .final-price {
+            font-size: 56px;
+            font-weight: 800;
+            color: #fbbf24;
+            margin-bottom: 20px;
+        }
+
+        .faq {
+            display: grid;
+            gap: 16px;
+        }
+
+        .faq-item {
+            background-color: #1f2937;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #fbbf24;
+        }
+
+        .faq-item h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            margin: 0 0 8px 0;
+        }
+
+        .faq-item p {
+            font-size: 14px;
+            color: #d1d5db;
+            margin: 0;
+        }
+
+        .urgency-banner {
+            background-color: #dc2626;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        footer {
+            padding: 40px 20px;
+            background-color: #111;
+            border-top: 1px solid #374151;
+            text-align: center;
+            color: #6b7280;
+            font-size: 12px;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .guarantee-text {
+            font-size: 12px;
+            color: #9ca3af;
+        }
+
+        .success-note {
+            font-size: 14px;
+            color: #6b7280;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .pillars {
+                grid-template-columns: 1fr;
+            }
+
+            .price-comparison {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .cta-button {
+                padding: 16px 32px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Countdown Bar -->
+    <div class="countdown-bar">
+        ⏰ DESCONTO DE 50% VÁLIDO POR <span id="timer">23:59:59</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="section hero-gradient">
+        <div class="hero">
+            <h1>Você está desperdiçando o poder que mudou a história</h1>
+            <p>Leonardo da Vinci, Nikola Tesla, Steve Jobs... todos conheciam esse segredo sobre energia que 99% dos homens ignora.</p>
+            <p>Aprenda a transmutar sua energia em foco irresistível, disciplina e propósito real — sem misticismo, sem autoajuda vazia.</p>
+            <a href="https://pay.kiwify.com.br/LgtcX9s" class="cta-button">SIM, DESBLOQUEAR MINHA GENIALIDADE →</a>
+            <p style="font-size: 14px; color: #6b7280; margin-bottom: 0;">⚡ Acesso imediato • 100% garantia • Suporte vitalício</p>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="section section-dark">
+        <h2>Veja o método em ação</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="O Gênio Oculto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p class="success-note">Troque o ID do vídeo pelo seu quando tiver pronto</p>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section">
+        <h2>Seu fracasso não é falta de vontade. É falta de energia.</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Procrastinação crônica</h3>
+                <p>Sente que tem potencial mas não consegue agir. Fica travado entre o desejo e a inação.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔄</div>
+                <h3>Ciclos repetidos</h3>
+                <p>Tenta, falha, desiste. Depois tenta de novo. O mesmo padrão se repete por anos.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌀</div>
+                <h3>Distração constante</h3>
+                <p>Sua energia vaza em redes sociais, vídeos, impulsos. Nada de importante sai do papel.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">😵</div>
+                <h3>Baixa autoestima</h3>
+                <p>Acha que não é "disciplinado o suficiente" ou que "nasceu sem talento". A verdade é outra.</p>
+            </div>
+        </div>
+        <div class="highlight-box">
+            <p>Freud chamou isso de "vazamento libidinal". Sua energia está sendo desperdiçada em canais improdutivos. E ninguém te ensinou a redirecionar isso.</p>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section">
+        <h2>A sublimação: converter energia em gênio</h2>
+        <div style="background-color: #1f2937; padding: 40px; border-radius: 8px; margin-bottom: 40px;">
+            <p style="font-size: 18px; line-height: 1.8; color: #d1d5db;">
+                <strong>Sublimação</strong> não é negação ou repressão. É a conversão consciente de impulsos instintivos em criatividade, foco e realização.
+            </p>
+            <p style="font-size: 18px; line-height: 1.8; color: #d1d5db; margin-top: 16px;">
+                Da Vinci pintava enquanto canalizava sua energia. Napoleon dirigia impérios. Steve Jobs criava produtos revolucionários. Todos aplicavam inconscientemente o que você vai aprender de forma consciente e estruturada.
+            </p>
+        </div>
+        <h3 style="text-align: center; font-size: 24px; margin-bottom: 20px;">Os 3 pilares do Gênio Oculto</h3>
+        <div class="pillars">
+            <div class="pillar">
+                <div class="pillar-number">1</div>
+                <h4>Reconhecer</h4>
+                <p>Identifique aonde sua energia está sendo desperdiçada (vícios, distrações, comportamentos automáticos)</p>
+            </div>
+            <div class="pillar">
+                <div class="pillar-number">2</div>
+                <h4>Redirecionar</h4>
+                <p>Use técnicas práticas de transmutação para canalizar essa energia para objetivos reais</p>
+            </div>
+            <div class="pillar">
+                <div class="pillar-number">3</div>
+                <h4>Ritualizar</h4>
+                <p>Implante rituais diários que mantêm o direcionamento automático e sem esforço consciente</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section section-dark">
+        <h2>O que você recebe</h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-emoji">📘</div>
+                <h3>Ebook completo "O Gênio Oculto"</h3>
+                <p style="color: #d1d5db; font-size: 14px;">Guia de 100+ páginas estruturado passo a passo, pronto para ler em qualquer lugar</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-emoji">🗺️</div>
+                <h3>Mapa Mental Interativo</h3>
+                <p style="color: #d1d5db; font-size: 14px;">Visualização completa do método com exercícios organizados e fáceis de seguir</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-emoji">🎯</div>
+                <h3>Plano de 21 Dias</h3>
+                <p style="color: #d1d5db; font-size: 14px;">Roteiro diário pronto para implementar. Cada dia tem exercício específico e progressivo</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-emoji">🔧</div>
+                <h3>10 Técnicas de Transmutação</h3>
+                <p style="color: #d1d5db; font-size: 14px;">Ferramentas práticas testadas que funcionam em qualquer situação</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-emoji">🌅</div>
+                <h3>Ritual Matinal Poderoso</h3>
+                <p style="color: #d1d5db; font-size: 14px;">Sequência de 15 minutos para o fortalecimento mental diário</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-emoji">♾️</div>
+                <h3>Acesso Vitalício</h3>
+                <p style="color: #d1d5db; font-size: 14px;">Sem renovação, sem assinatura. Uma vez que você compra, é seu para sempre</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section">
+        <h2>Mensagens reais de quem testou</h2>
+        <div class="grid">
+            <div class="testimonial">
+                <div class="testimonial-name">💬 Luan</div>
+                <div class="testimonial-message">Mano, comecei a aplicar aquilo lá, não sei explicar direito, mas meu foco melhorou mt</div>
+                <div class="testimonial-reply">Perfeito, e só manter agora! ✓✓</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-name">💬 Allan</div>
+                <div class="testimonial-message">Cara, aquilo fez sentido pra mim, principalmente essa parte de parar de gastar energia</div>
+                <div class="testimonial-message">Tô mais disciplinado esses dias, coisa que eu nunca fui kkk</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-name">💬 Daniel M.</div>
+                <div class="testimonial-message">No 3º dia já sentia diferença de verdade. Foco voltou, ansiedade caiu. Muito bom mesmo.</div>
+                <div style="font-size: 12px; color: #6b7280; margin-top: 8px;">★★★★★ Recomendo</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section section-dark">
+        <div class="pricing-section">
+            <h2>Preço especial por tempo LIMITADO</h2>
+            <div class="pricing-box">
+                <p style="color: #9ca3af; font-size: 16px; margin-bottom: 20px;">Preço normal</p>
+                <div class="price-comparison">
+                    <span class="old-price">R$74,66</span>
+                    <span class="discount-badge">-50%</span>
+                </div>
+                <div class="final-price">R$ 37,33</div>
+                <p style="color: #d1d5db; font-size: 14px; margin-bottom: 30px;">Uma única compra. Acesso vitalício. Sem anuidades.</p>
+                <a href="https://pay.kiwify.com.br/LgtcX9s" class="cta-button" style="width: 100%; display: block;">QUERO DESBLOQUEAR MINHA GENIALIDADE</a>
+                <p class="guarantee-text">✓ Garantia de 7 dias ou dinheiro de volta<br>✓ Acesso imediato após pagamento<br>✓ Sem pergunta se não gostar</p>
+            </div>
+            <div class="urgency-banner">
+                ⚠️ Desconto expira em <span id="timer2">23:59:59</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <h2>Perguntas frequentes</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <h4>Qual é o diferencial com outros cursos de autoajuda?</h4>
+                <p>Este não é autoajuda. É psicologia aplicada baseada em Freud + exercícios práticos com progressão de 21 dias. Você não vai ler motivação vazia. Vai aprender a mecânica exata de por que você procrastina e como mudar isso estruturalmente.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Quanto tempo leva para ver resultados?</h4>
+                <p>O ritual matinal gera efeito no próprio dia. A maioria dos alunos sente diferença na concentração entre dia 1-3. Transformações estruturais (quebra de vícios, projetos saindo do papel) começam entre semana 2-3.</p>
+            </div>
+            <div class="faq-item">
+                <h4>E se eu não gostar?</h4>
+                <p>Você tem 7 dias de garantia total. Se não for o que esperava, retorna e recupera 100% do valor. Zero questions asked. Mas aviso: até agora ninguém acionou essa garantia.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Preciso de experiência prévia com meditação ou autoajuda?</h4>
+                <p>Não. Na verdade, às vezes é melhor não ter. O método é prático e direto. Se você já tentou 10 cursos de meditação e nada funcionou, aqui você descobre por quê.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="section">
+        <div style="text-align: center;">
+            <h2>Você tem o potencial. Só falta canalizar a energia.</h2>
+            <p style="font-size: 18px; color: #d1d5db; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Os próximos 21 dias vão ser diferentes. Ou você muda agora ou continua nos mesmos ciclos por mais 21 anos.
+            </p>
+            <a href="https://pay.kiwify.com.br/LgtcX9s" class="cta-button" style="font-size: 20px; padding: 20px 56px;">DESBLOQUEAR AGORA POR R$ 37,33</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 O Gênio Oculto. Todos os direitos reservados.<br>
+        Termos de Uso • Política de Privacidade • Contato</p>
+    </footer>
+
+    <script>
+        function updateTimer() {
+            let hours = 23;
+            let minutes = 59;
+            let seconds = 59;
+
+            setInterval(() => {
+                seconds--;
+                if (seconds < 0) {
+                    seconds = 59;
+                    minutes--;
+                    if (minutes < 0) {
+                        minutes = 59;
+                        hours--;
+                        if (hours < 0) {
+                            hours = 23;
+                        }
+                    }
+                }
+
+                const timeStr = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+                document.getElementById('timer').textContent = timeStr;
+                document.getElementById('timer2').textContent = timeStr;
+            }, 1000);
+        }
+
+        updateTimer();
+    </script>
+</body>
+</html>

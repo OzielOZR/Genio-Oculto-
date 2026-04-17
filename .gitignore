@@ -1,6 +1,2 @@
-cat > .gitignore << 'EOF'
 node_modules/
 .next/
-.env.local
-dist/
-EOF
